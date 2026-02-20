@@ -1,4 +1,4 @@
-Enter// js/main.js
+// js/main.js
 async function loadLatestPosts() {
     try {
         const { data: posts, error } = await supabase
