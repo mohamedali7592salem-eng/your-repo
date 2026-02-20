@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملف مستخدم - مدونتي</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="container">
+            <a href="index.html" class="logo">📝 مدونتي</a>
+            <a href="explore.html" class="nav-link">استكشف</a>
+        </div>
+    </nav>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <div class="container">
+                <div class="profile-cover">
+                    <img src="images/default-cover.jpg" alt="غلاف الملف" id="viewCoverImage">
+                </div>
+                
+                <div class="profile-info">
+                    <div class="profile-avatar">
+                        <img src="images/default-avatar.png" alt="الصورة الشخصية" id="viewProfileImage">
+                    </div>
+                    
+                    <div class="profile-details">
+                        <h1 id="viewProfileName">جاري التحميل...</h1>
+                        <p id="viewProfileBio"></p>
+                        
+                        <div class="profile-stats">
+                            <div class="stat">
+                                <span class="stat-value" id="viewPostsCount">0</span>
+                                <span class="stat-label">مقالات</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-content">
+            <div class="container">
+                <h2>مقالات الكاتب</h2>
+                <div class="posts-list" id="viewUserPosts">
+                    <div class="loading">جاري التحميل...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/supabase-config.js"></script>
+    <script src="js/view-profile.js"></script>
+</body>
+</html>
