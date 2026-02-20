@@ -1,5 +1,5 @@
 // js/new-post.js
-async function checkAuth() {
+async function checkAuth(){
     const user = await getCurrentUser();
     if (!user) {
         window.location.href = 'login.html';
