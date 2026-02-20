@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استكشف المدونات - مدونتي</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="container">
+            <a href="index.html" class="logo">📝 مدونتي</a>
+            <div class="nav-right">
+                <a href="index.html">الرئيسية</a>
+                <a href="explore.html" class="active">استكشف</a>
+                <a href="login.html" class="btn-login">تسجيل دخول</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="explore-page">
+        <div class="container">
+            <h1>استكشف المدونين</h1>
+            
+            <div class="search-section">
+                <input type="text" id="searchUsers" placeholder="ابحث عن كاتب...">
+            </div>
+            
+            <div class="users-grid" id="usersList">
+                <div class="loading">جاري التحميل...</div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/supabase-config.js"></script>
+    <script src="js/explore.js"></script>
+</body>
+                                 </html>
