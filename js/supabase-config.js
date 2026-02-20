@@ -2,17 +2,21 @@
 const SUPABASE_URL = 'https://toqqvrhsumddbiqbyjdy.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRvcXF2cmhzdW1kZGJpcWJ5amR5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE1OTkwNjksImV4cCI6MjA4NzE3NTA2OX0.xIfU9gOFFcuOXVRMpIN1G1bZIPg5-Io8pvbuj7A9fYY';
 
-const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+// ✅ الطريقة الصحيحة: استخدم createClient على supabase الأصلي
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+// ✅ اجعل الكائن متاحاً عالمياً
+window.supabase = supabaseClient;
 
 // دالة للتحقق من المستخدم الحالي
 async function getCurrentUser() {
-    const { data: { user } } = await supabase.auth.getUser();
+    const { data: { user } } = await window.supabase.auth.getUser();
     return user;
 }
 
 // دالة لتسجيل الخروج
 async function logout() {
-    const { error } = await supabase.auth.signOut();
+    const { error } = await window.supabase.auth.signOut();
     if (!error) {
         window.location.href = 'index.html';
     }
